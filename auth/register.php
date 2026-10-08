@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$username, $password]);
             $success = "Registrasi berhasil! Silakan login.";
         } catch (PDOException $e) {
-            $error = "Username sudah digunakan!";
+            $error = "Error Database: " . $e->getMessage();
         }
     } else {
         $error = "Semua kolom harus diisi!";
